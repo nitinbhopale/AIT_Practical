@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    #colorInputs {
+      margin-bottom: 20px;
+    }
+
+    #colorPreview {
+      width: 200px;
+      height: 200px;
+      border: 1px solid black;
+      margin-bottom: 20px;
+    }
+  </style>
+  <title>Question-7</title>
+</head>
+<body>
+  <div id="colorInputs">
+    Red: <input type="range" id="redRange" min="0" max="256" value="0"><br>
+    Green: <input type="range" id="greenRange" min="0" max="256" value="0"><br>
+    Blue: <input type="range" id="blueRange" min="0" max="256" value="0">
+  </div>
+
+  <div id="colorPreview"></div>
+
+  <script>
+    var redRange = document.getElementById("redRange");
+    var greenRange = document.getElementById("greenRange");
+    var blueRange = document.getElementById("blueRange");
+    var colorPreview = document.getElementById("colorPreview");
+
+    function updateColor() {
+      var redValue = redRange.value;
+      var greenValue = greenRange.value;
+      var blueValue = blueRange.value;
+      var color = "rgb(" + redValue + "," + greenValue + "," + blueValue + ")";
+      colorPreview.style.backgroundColor = color;
+    }
+
+    redRange.addEventListener("input", updateColor);
+    greenRange.addEventListener("input", updateColor);
+    blueRange.addEventListener("input", updateColor);
+  </script>
+</body>
+</html>
